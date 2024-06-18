@@ -1,5 +1,6 @@
 import { create } from 'venom-bot';
 import { stages, getStage } from './stages.js';
+const port = process.env.PORT || 4000;
 
 create().then((client) => start(client));
 
