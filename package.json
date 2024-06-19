@@ -9,6 +9,7 @@
     "dev": "node src/server.js"
   },
   "dependencies": {
-    "venom-bot": "^3.0.18"
+    "venom-bot": "^3.0.18",
+    "express":"^4.19.2"
   }
 }
