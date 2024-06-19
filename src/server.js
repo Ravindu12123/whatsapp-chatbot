@@ -1,6 +1,9 @@
 import { create } from 'venom-bot';
 import { stages, getStage } from './stages.js';
+const express=require('express');
 const port = process.env.PORT || 4000;
+
+const app =express();
 
 create().then((client) => start(client));
 
@@ -27,3 +30,7 @@ async function start(client) {
     client.close();
   });
 }
+
+app.listen(port,()=>{
+  console.log(`app listening on ${port}`);
+});
