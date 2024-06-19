@@ -1,9 +1,12 @@
 import { create } from 'venom-bot';
 import { stages, getStage } from './stages.js';
-const express=require('express');
+import express from 'express';
 const port = process.env.PORT || 4000;
 
-const app =express();
+const app = express();
+app.get("/", (req, res) => {
+    res.send("hello");
+});
 
 create().then((client) => start(client));
 
