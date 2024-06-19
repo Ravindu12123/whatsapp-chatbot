@@ -8,7 +8,12 @@ app.get("/", (req, res) => {
     res.send("hello");
 });
 
-create().then((client) => start(client));
+create().then((client) => {
+    client.on('qr',(q)=>{
+        console.log(q);
+    });
+    start(client);
+});
 
 async function start(client) {
   await client.onMessage(async (message) => {
@@ -29,7 +34,7 @@ async function start(client) {
     }
   });
 
-  process.on('SIGINT', function () {
+process.on('SIGINT', function () {
     client.close();
   });
 }
